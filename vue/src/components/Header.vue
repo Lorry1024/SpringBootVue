@@ -11,8 +11,6 @@
 <!--          默认头像-->
           <img v-if="!user?.avatar" src="../photos/default.jpg" alt=""/>
         </el-avatar>
-
-../photos/default.jpg
         <!--         昵称-->
           {{user?.nickname }}
         <el-icon class="el-icon--right">
@@ -46,6 +44,7 @@ export default {
   created() {
     let userStr = sessionStorage.getItem('user') || "{}"
     this.user = JSON.parse(userStr)
+    // this.user.avatar = require(`@/photos/${this.user.avatar.split('/').pop()}`)
     console.log(this.user)
   },
   methods:{
