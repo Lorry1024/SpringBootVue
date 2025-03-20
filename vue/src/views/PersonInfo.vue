@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container style="width:1150px">
     <el-header style="height: 100px;text-align: left">
       <div style="height: 50px;margin-top: 20px">
         <el-button type="primary" style="margin-left: 10px" @click="handelShow">修改</el-button>
