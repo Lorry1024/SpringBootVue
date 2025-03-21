@@ -4,17 +4,17 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
     baseURL: 'https://api.deepseek.com/v1',
-    apiKey: '<your-api-key>',
+    apiKey: '<your-api-key1>',
     dangerouslyAllowBrowser: true
 });
 
-async function main(input) {
+async function main(input, model = "deepseek-chat")  {
     console.log(import.meta.env);
     try {
         const completion = await openai.chat.completions.create({
-            messages: [{ role: "system", content: "You are a helpful assistant." }
-            , { role: "user", content: input }],
-            model: "deepseek-chat",
+            messages: [{ role: "system", content: "你是一个智能助手." }
+                , { role: "user", content: input }],
+            model: model,
         });
 
         console.log(completion.choices[0].message.content);
